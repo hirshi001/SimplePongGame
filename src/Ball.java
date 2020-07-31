@@ -16,13 +16,16 @@ public class Ball {
         width = bwidth;
         height = bheight;
         Random random = new Random();
-        vx = -(random.nextInt(6)-3);
+        vx = (random.nextInt(3)+2);
+        if(random.nextBoolean()){
+            vx = -vx;
+        }
         vy = random.nextInt(6)-3;
     }
 
     public void draw(Graphics g){
         g.setColor(Color.WHITE);
-        g.fillRect(Math.round(x), Math.round(y), width, height);
+        g.fillOval(Math.round(x), Math.round(y), width, height);
     }
 
     public void update(Paddle p1, Paddle p2, int stageWidth, int stageHeight){
