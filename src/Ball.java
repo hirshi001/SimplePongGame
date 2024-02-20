@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class Ball {
@@ -15,7 +16,7 @@ public class Ball {
         y = by;
         width = bwidth;
         height = bheight;
-        Random random = new Random();
+        Random random = new SecureRandom();
         vx = (random.nextInt(3)+2);
         if(random.nextBoolean()){
             vx = -vx;
@@ -59,7 +60,7 @@ public class Ball {
             System.out.println("Player 1 Won");
         }
 
-        Random random = new Random();
+        Random random = new SecureRandom();
         boolean bounced = false;
         if(isTouching(p1)){
             x = p1.x+p1.width;
